@@ -2,6 +2,14 @@
 
 {% block content %}
 <form action="." method='POST'>
+	{% if messages %}
+	<ul class="messages">
+		{% for message in messages %}
+		<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	
 		<h2>Have an account?</h2>
 		<div class="login-show">
 			<h2>LOGIN</h2>
