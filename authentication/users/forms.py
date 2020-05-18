@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-class  RegistrationForm(ModelForm):
+class  RegistrationForm(UserCreationForm):
     password1 = forms.CharField(
         label= ("Password"),
         strip=False,

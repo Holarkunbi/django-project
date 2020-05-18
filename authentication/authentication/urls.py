@@ -17,12 +17,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from users.views import user_logout
+from users.views import homeview, user_logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('users.urls', namespace='user')),
-    path('logout/',user_logout, name='logout')
+    path('home/', homeview, name='homepage'),
+    path('logout/',user_logout, name='logout'),
+
 ]
 # to manage static files and media files in development
 if settings.DEBUG: 
